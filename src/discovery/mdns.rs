@@ -38,6 +38,7 @@ impl MdnsDiscovery {
 impl Discovery for MdnsDiscovery {
     fn start(&mut self) -> Result<(), DiscoveryError> {
         let instance_name = self.instance_name();
+        let anchor_val = if self.is_anchor { "true" } else { "false" };
         
         let service_info = ServiceInfo::new(
             SERVICE_TYPE,
@@ -45,7 +46,7 @@ impl Discovery for MdnsDiscovery {
             "local.",
             "",
             8080,
-            &[("is_anchor", if self.is_anchor { "true" } else { "false" })],
+            &[("is_anchor", anchor_val)][..],
         ).map_err(|e| DiscoveryError::NetworkError(e.to_string()))?;
 
         self.daemon.register(service_info).map_err(|e| DiscoveryError::NetworkError(e.to_string()))?;
