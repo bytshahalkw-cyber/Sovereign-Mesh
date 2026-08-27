@@ -3,6 +3,7 @@ use std::io::{Read, Write};
 use std::net::{TcpListener, TcpStream};
 use std::thread;
 use thiserror::Error;
+use std::sync::Arc;
 
 #[derive(Error, Debug)]
 pub enum TransportError {
@@ -17,20 +18,22 @@ pub struct TransportLayer;
 impl TransportLayer {
     pub fn listen<F>(address: &str, on_packet: F) -> Result<(), TransportError>
     where
-        F: Fn(MeshPacket) + Send + 'static,
+        F: Fn(MeshPacket) + Send + Sync + 'static,
     {
         let listener = TcpListener::bind(address)?;
         println!("🌐 خادم الاتصال يستمع على العنوان: {}", address);
+        let callback = Arc::new(on_packet);
 
         thread::spawn(move || {
             for stream in listener.incoming() {
                 match stream {
                     Ok(mut stream) => {
+                        let cb = Arc::clone(&callback);
                         thread::spawn(move || {
                             let mut buffer = Vec::new();
                             if stream.read_to_end(&mut buffer).is_ok() {
                                 if let Ok(packet) = bincode::deserialize::<MeshPacket>(&buffer) {
-                                    on_packet(packet);
+                                    cb(packet);
                                 }
                             }
                         });
