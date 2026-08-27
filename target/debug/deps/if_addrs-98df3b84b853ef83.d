@@ -1,0 +1,8 @@
+/data/data/com.termux/files/home/sovereign-mesh/target/debug/deps/if_addrs-98df3b84b853ef83.d: /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/if-addrs-0.13.4/src/lib.rs /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/if-addrs-0.13.4/src/posix.rs /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/if-addrs-0.13.4/src/posix_not_apple.rs /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/if-addrs-0.13.4/src/sockaddr.rs
+
+/data/data/com.termux/files/home/sovereign-mesh/target/debug/deps/libif_addrs-98df3b84b853ef83.rmeta: /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/if-addrs-0.13.4/src/lib.rs /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/if-addrs-0.13.4/src/posix.rs /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/if-addrs-0.13.4/src/posix_not_apple.rs /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/if-addrs-0.13.4/src/sockaddr.rs
+
+/data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/if-addrs-0.13.4/src/lib.rs:
+/data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/if-addrs-0.13.4/src/posix.rs:
+/data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/if-addrs-0.13.4/src/posix_not_apple.rs:
+/data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/if-addrs-0.13.4/src/sockaddr.rs:
