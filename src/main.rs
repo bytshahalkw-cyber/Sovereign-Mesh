@@ -10,7 +10,7 @@ fn main() {
     println!("🔑 تم إنشاء مفتاح المرسل بنجاح (الحجم: {} بايت)", sender.public_key().len());
     println!("🔑 تم إنشاء مفتاح المستقبل بنجاح (الحجم: {} بايت)", receiver.public_key().len());
 
-    let payload = b"رسالة سرية عبر شبكة الدرع السيادي المعزولة".to_vec();
+    let payload = "رسالة سرية عبر شبكة الدرع السيادي المعزولة".as_bytes().to_vec();
     
     let packet = MeshPacket::create(
         &sender,
