@@ -1,6 +1,6 @@
 use super::{Discovery, DiscoveryError, NodeAddress, NodeId, NodeInfo};
+use crate::crypto::NodeIdentity;
 use mdns_sd::{ServiceDaemon, ServiceEvent, ServiceInfo};
-use rand::Rng;
 use std::collections::HashMap;
 use std::sync::{Arc, Mutex};
 use std::time::SystemTime;
@@ -10,28 +10,27 @@ const SERVICE_TYPE: &str = "_sovereign-mesh._tcp.local.";
 pub struct MdnsDiscovery {
     daemon: ServiceDaemon,
     neighbors: Arc<Mutex<HashMap<NodeId, NodeInfo>>>,
-    my_id: NodeId,
+    identity: NodeIdentity,
     is_anchor: bool,
 }
 
 impl MdnsDiscovery {
     pub fn new(is_anchor: bool) -> Result<Self, DiscoveryError> {
         let daemon = ServiceDaemon::new().map_err(|e| DiscoveryError::NetworkError(e.to_string()))?;
-        let mut rng = rand::thread_rng();
-        let mut my_id = [0u8; 32];
-        rng.fill(&mut my_id);
+        let identity = NodeIdentity::generate().map_err(|_| DiscoveryError::NetworkError("فشل توليد الهوية التشفيرية".into()))?;
 
         Ok(Self {
             daemon,
             neighbors: Arc::new(Mutex::new(HashMap::new())),
-            my_id,
+            identity,
             is_anchor,
         })
     }
 
     fn instance_name(&self) -> String {
-        let id_str: String = self.my_id.iter().map(|b| format!("{:02x}", b)).collect();
-        format!("node-{}", &id_str[..8])
+        let pub_key = self.identity.public_key();
+        let id_str: String = pub_key.iter().take(8).map(|b| format!("{:02x}", b)).collect();
+        format!("node-{}", id_str)
     }
 }
 
@@ -80,7 +79,7 @@ impl Discovery for MdnsDiscovery {
                         };
 
                         neighbors.insert(id, node_info);
-                        println!("✅ تم اكتشاف عقدة جديدة: {:?}", info.get_fullname());
+                        println!("✅ تم اكتشاف عقدة موثقة بهوية تشفيرية: {:?}", info.get_fullname());
                     }
                     ServiceEvent::ServiceRemoved(_, fullname) => {
                         println!("❌ غادرت العقدة الشبكة: {}", fullname);
