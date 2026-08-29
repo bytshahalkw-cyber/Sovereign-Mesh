@@ -1,0 +1,1 @@
+/data/data/com.termux/files/home/sovereign-mesh/target/debug/main: /data/data/com.termux/files/home/sovereign-mesh/src/bin/main.rs /data/data/com.termux/files/home/sovereign-mesh/src/lib.rs /data/data/com.termux/files/home/sovereign-mesh/src/peer.rs /data/data/com.termux/files/home/sovereign-mesh/src/protocol.rs /data/data/com.termux/files/home/sovereign-mesh/src/seen_cache.rs

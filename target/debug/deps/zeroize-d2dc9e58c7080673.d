@@ -1,0 +1,10 @@
+/data/data/com.termux/files/home/sovereign-mesh/target/debug/deps/zeroize-d2dc9e58c7080673.d: /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zeroize-1.9.0/src/lib.rs /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zeroize-1.9.0/src/barrier.rs /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zeroize-1.9.0/src/stack.rs /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zeroize-1.9.0/src/../README.md
+
+/data/data/com.termux/files/home/sovereign-mesh/target/debug/deps/libzeroize-d2dc9e58c7080673.rlib: /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zeroize-1.9.0/src/lib.rs /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zeroize-1.9.0/src/barrier.rs /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zeroize-1.9.0/src/stack.rs /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zeroize-1.9.0/src/../README.md
+
+/data/data/com.termux/files/home/sovereign-mesh/target/debug/deps/libzeroize-d2dc9e58c7080673.rmeta: /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zeroize-1.9.0/src/lib.rs /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zeroize-1.9.0/src/barrier.rs /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zeroize-1.9.0/src/stack.rs /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zeroize-1.9.0/src/../README.md
+
+/data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zeroize-1.9.0/src/lib.rs:
+/data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zeroize-1.9.0/src/barrier.rs:
+/data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zeroize-1.9.0/src/stack.rs:
+/data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zeroize-1.9.0/src/../README.md:

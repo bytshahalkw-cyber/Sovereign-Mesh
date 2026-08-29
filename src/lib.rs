@@ -1,4 +1,3 @@
-pub mod discovery;
-pub mod crypto;
-pub mod routing;
-pub mod transport;
+pub mod protocol;
+pub mod peer;
+pub mod seen_cache;
